@@ -1,0 +1,43 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+
+int tokens(char* str)
+{
+  if(!strcmp(str, "int") || !strcmp(str, "char") || !strcmp(str, "double") || !strcmp(str, "boolean") || !strcmp(str, "String") || !strcmp(str, "null"))  
+  return 1;   //literals
+  else if(!strcmp(str, ";") || !strcmp(str, ",") || !strcmp(str, ".") || !strcmp(str, "(") || !strcmp(str, ")") || !strcmp(str, "{") || !strcmp(str, "}") || 
+  !strcmp(str, "[") || !strcmp(str, "]"))
+  return 2;   //separators
+  else if(!strcmp(str, "=") || !strcmp(str, ">") || !strcmp(str, "<") || !strcmp(str, "!") || !strcmp(str, "~") || !strcmp(str, "?") || !strcmp(str, ":") || 
+  !strcmp(str, "==") || !strcmp(str, "<=") || !strcmp(str, ">=") || !strcmp(str, "!=") || !strcmp(str, "&&") || !strcmp(str, "||") || !strcmp(str, "++") || 
+  !strcmp(str, "--") || !strcmp(str, "+") || !strcmp(str, "-") || !strcmp(str, "*") || !strcmp(str, "/") || !strcmp(str, "&") || !strcmp(str, "|") || 
+  !strcmp(str, "^") || !strcmp(str, "%") || !strcmp(str, "<<") || !strcmp(str, ">>") || !strcmp(str, ">>>") || !strcmp(str, "+=") || !strcmp(str, "-=") || 
+  !strcmp(str, "*=") || !strcmp(str, "/=") || !strcmp(str, "&=") || !strcmp(str, "|=") || !strcmp(str, "^=") || !strcmp(str, "%=") || !strcmp(str, "<<=") || 
+  !strcmp(str, ">>=") || !strcmp(str, ">>>=") )
+  return 3;
+  
+  
+  return 0;
+}
+
+void main(char **fn) 
+{ 
+  int line=1, column=1, token=0;
+  File *fp[5];
+  for(int i=0; i<5; i++)
+  {
+    fp[i] = fopen(fn[i+1], "r");
+    if(fp[i] == NULL)
+    {
+      printf("Error opening file %s!", fn[i+1]);
+      exit(0);
+    }
+    else
+    {
+      
+    }
+    fclose(fp[i]);
+  }  
+ return;
+}
