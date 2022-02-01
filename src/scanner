@@ -6,17 +6,33 @@ int tokens(char* str)
 {
   if(!strcmp(str, "int") || !strcmp(str, "char") || !strcmp(str, "double") || !strcmp(str, "boolean") || !strcmp(str, "String") || !strcmp(str, "null"))  
   return 1;   //literals
+  
   else if(!strcmp(str, ";") || !strcmp(str, ",") || !strcmp(str, ".") || !strcmp(str, "(") || !strcmp(str, ")") || !strcmp(str, "{") || !strcmp(str, "}") || 
   !strcmp(str, "[") || !strcmp(str, "]"))
   return 2;   //separators
+  
   else if(!strcmp(str, "=") || !strcmp(str, ">") || !strcmp(str, "<") || !strcmp(str, "!") || !strcmp(str, "~") || !strcmp(str, "?") || !strcmp(str, ":") || 
   !strcmp(str, "==") || !strcmp(str, "<=") || !strcmp(str, ">=") || !strcmp(str, "!=") || !strcmp(str, "&&") || !strcmp(str, "||") || !strcmp(str, "++") || 
   !strcmp(str, "--") || !strcmp(str, "+") || !strcmp(str, "-") || !strcmp(str, "*") || !strcmp(str, "/") || !strcmp(str, "&") || !strcmp(str, "|") || 
   !strcmp(str, "^") || !strcmp(str, "%") || !strcmp(str, "<<") || !strcmp(str, ">>") || !strcmp(str, ">>>") || !strcmp(str, "+=") || !strcmp(str, "-=") || 
   !strcmp(str, "*=") || !strcmp(str, "/=") || !strcmp(str, "&=") || !strcmp(str, "|=") || !strcmp(str, "^=") || !strcmp(str, "%=") || !strcmp(str, "<<=") || 
   !strcmp(str, ">>=") || !strcmp(str, ">>>=") )
-  return 3;
+  return 3;   //operators
   
+  else if(!strcmp(str, "abstract") || !strcmp(str, "continue") || !strcmp(str, "goto") || !strcmp(str, "package") || !strcmp(str, "switch") || 
+  !strcmp(str, "assert") || !strcmp(str, "default") || !strcmp(str, "if") || !strcmp(str, "private") || !strcmp(str, "this") || !strcmp(str, "do") || 
+  !strcmp(str, "implements") || !strcmp(str, "protected") || !strcmp(str, "throw") || !strcmp(str, "break") || !strcmp(str, "import") || !strcmp(str, "public") || 
+  !strcmp(str, "throws") || !strcmp(str, "byte") || !strcmp(str, "else") || !strcmp(str, "instanceof") || !strcmp(str, "return") || !strcmp(str, "transient") || 
+  !strcmp(str, "case") || !strcmp(str, "extends") || !strcmp(str, "short") || !strcmp(str, "try") || !strcmp(str, "catch") || !strcmp(str, "final") || 
+  !strcmp(str, "interface") || !strcmp(str, "static") || !strcmp(str, "void") || !strcmp(str, "finally") || !strcmp(str, "long") || !strcmp(str, "strictfp") || 
+  !strcmp(str, "volatile") || !strcmp(str, "class") || !strcmp(str, "native") || !strcmp(str, "super") || !strcmp(str, "while") || !strcmp(str, "const") || 
+  !strcmp(str, "for") || !strcmp(str, "new") || !strcmp(str, "synchronized") )
+  return 4;   //keywords
+  
+  else if(!strcmp(str, "0") || !strcmp(str, "1") || !strcmp(str, "2") || !strcmp(str, "3") || !strcmp(str, "4") || !strcmp(str, "5") || !strcmp(str, "6") || 
+  !strcmp(str, "7") || !strcmp(str, "8") || !strcmp(str, "9") )
+  return 5;   //constants
+  else if(
   
   return 0;
 }
